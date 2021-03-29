@@ -17,4 +17,4 @@ jobs:
     - name: Use Node.JS
       uses: actions/setup-node@master
     - run: yarn install --frozen-lockfile
-    - run: yarn test
+    - run: yarn jest --ci
