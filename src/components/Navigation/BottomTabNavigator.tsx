@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { MeditationIcon } from "../MeditationIcon/MeditationIcon";
+import { MeditationScreenNavigator } from "../MeditationScreen/MeditationScreen";
 import TabOneScreen from "./TabOneScreen";
 import TabTwoScreen from "./TabTwoScreen";
 
@@ -10,8 +11,17 @@ const BottomTab = createBottomTabNavigator();
 export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Meditation"
     >
+      <BottomTab.Screen
+        name="Meditation"
+        component={ MeditationScreenNavigator }
+        options={{
+          tabBarIcon: ({ color }) => (
+            <MeditationIcon color={ color } />
+          ),
+        }}
+      />
       <BottomTab.Screen
         name="TabOne"
         component={TabOneNavigator}

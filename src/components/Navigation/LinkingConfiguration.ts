@@ -7,6 +7,7 @@ export const linking: LinkingOptions = {
     screens: {
       Root: {
         screens: {
+          Meditation: 'meditation',
           TabOne: {
             screens: {
               TabOneScreen: "one",
