@@ -23,7 +23,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabOne"
+        name="Progress"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -32,7 +32,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Settings"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => (
