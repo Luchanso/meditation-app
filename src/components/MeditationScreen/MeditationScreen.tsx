@@ -2,43 +2,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useSpring, animated, useSpringRef } from "react-spring/native";
 import React, { useEffect, useRef, useState } from "react";
 import { Text, View } from "react-native";
-import styled from "styled-components/native";
 import { BreathCircle } from "../BreathCircle/BreathCircle";
 import { PlaceholderCircle } from "../PlaceholderCircle/PlaceholderCircle";
-
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const BreathControl = styled.View`
-  flex: 1;
-  flex-grow: 1;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-`;
-
-const BottomSide = styled.View`
-  margin-bottom: 8px;
-`;
-
-const AlignBlock = styled.View`
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 300px;
-  height: 300px;
-`;
-
-const Placeholder = styled.View`
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
+import { AlignBlock, BottomSide, BreathControl, Container, Placeholder } from "./styled";
 
 const TabOneStack = createStackNavigator();
 
