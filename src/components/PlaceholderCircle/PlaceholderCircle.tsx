@@ -2,7 +2,6 @@ import React from "react";
 import { Svg, Circle, Defs, LinearGradient, Stop } from "react-native-svg";
 
 export const PlaceholderCircle = function PlaceholderCircle() {
-  // console.log(props.radius)
   return (
     <Svg viewBox="0 0 100 100">
       <Circle cx="50" cy="50" r="49" stroke="url(#paint0_linear)" stroke-width="2" />
