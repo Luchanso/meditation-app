@@ -1,4 +1,4 @@
-name: Run tests
+name: Run e2e
 
 on:
   push:
@@ -14,7 +14,8 @@ jobs:
     - name: Use Node.JS
       uses: actions/setup-node@master
     - run: yarn install --frozen-lockfile
-    - run: brew tap wix/brew
-    - run: brew install applesimutils
-    - run: yarn detox build --configuration ios
-    - run: yarn detox test --configuration ios --cleanup
+    - run: yarn expo build:ios
+    # - run: brew tap wix/brew
+    # - run: brew install applesimutils
+    # - run: yarn detox build --configuration ios
+    # - run: yarn detox test --configuration ios --cleanup
