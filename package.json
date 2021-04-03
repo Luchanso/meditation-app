@@ -9,7 +9,10 @@
     "test": "jest --watchAll"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "moduleNameMapper": {
+      "react-spring/native": "<rootDir>/node_modules/react-spring/native.cjs"
+    }
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
