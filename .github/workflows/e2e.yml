@@ -13,10 +13,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.JS
       uses: actions/setup-node@master
+    - run: brew tap wix/brew
+    - run: brew install applesimutils
     - run: yarn install --frozen-lockfile
-    - run: npm install expo-cli --global
-    - run: expo build:ios
-    # - run: brew tap wix/brew
-    # - run: brew install applesimutils
-    # - run: yarn detox build --configuration ios
-    # - run: yarn detox test --configuration ios --cleanup
+  test:
+    runs-on: macos-latest
+    steps:
+    - run: yarn detox build --configuration ios
+    - run: yarn detox test  --configuration ios --cleanup
