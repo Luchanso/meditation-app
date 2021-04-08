@@ -1,6 +1,7 @@
-# EditorConfig is awesome: https://EditorConfig.org
+# Windows files
+[*.bat]
+end_of_line = crlf
 
-# top-most EditorConfig file
 root = true
 
 [*]

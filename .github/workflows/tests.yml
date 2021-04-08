@@ -1,0 +1,30 @@
+name: Run unit test's
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  units:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.JS
+      uses: actions/setup-node@master
+    - run: yarn install --frozen-lockfile
+    - run: yarn jest --ci
+  e2e:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.JS
+      uses: actions/setup-node@master
+    - run: brew tap wix/brew
+    - run: brew install applesimutils
+    - run: yarn install --frozen-lockfile
+    - run: cd ios && pod install && cd ..
+    - run: yarn detox build --configuration ios.sim.release
+    - run: yarn detox test  --configuration ios.sim.release --cleanup
+

@@ -1,26 +1,29 @@
-import { LinkingOptions } from "@react-navigation/native";
-import { makeUrl } from "expo-linking";
+import {LinkingOptions} from '@react-navigation/native';
 
 export const linking: LinkingOptions = {
-  prefixes: [makeUrl("/")],
+  prefixes: ['/'],
   config: {
     screens: {
       Root: {
         screens: {
-          Meditation: 'meditation',
+          Meditation: {
+            screens: {
+              MeditationScreen: 'meditation',
+            },
+          },
           TabOne: {
             screens: {
-              TabOneScreen: "one",
+              TabOneScreen: 'one',
             },
           },
           TabTwo: {
             screens: {
-              TabTwoScreen: "two",
+              TabTwoScreen: 'two',
             },
           },
         },
       },
-      NotFound: "*",
+      NotFound: '*',
     },
   },
 };
