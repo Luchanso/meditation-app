@@ -1,6 +1,6 @@
-import * as React from "react";
-import styled from "styled-components/native";
-import { MeditationIcon } from "../MeditationIcon/MeditationIcon";
+import * as React from 'react';
+import styled from 'styled-components/native';
+import {MeditationIcon} from '../MeditationIcon/MeditationIcon';
 
 const Container = styled.View`
   flex: 1;
@@ -16,9 +16,8 @@ const Title = styled.Text`
 export default function TabOneScreen() {
   return (
     <Container>
-      <Title>Привет Мир</Title>
+      <Title>Hello world</Title>
       <MeditationIcon />
     </Container>
   );
 }
-

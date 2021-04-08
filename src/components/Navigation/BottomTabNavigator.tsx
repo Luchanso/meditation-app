@@ -1,43 +1,38 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
-import React from "react";
-import { MeditationIcon } from "../MeditationIcon/MeditationIcon";
-import { MeditationScreenNavigator } from "../MeditationScreen/MeditationScreen";
-import TabOneScreen from "./TabOneScreen";
-import TabTwoScreen from "./TabTwoScreen";
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react';
+import {MeditationIcon} from '../MeditationIcon/MeditationIcon';
+import { MeditationScreen } from '../MeditationScreen/MeditationScreen';
+import TabOneScreen from './TabOneScreen';
+import TabTwoScreen from './TabTwoScreen';
 
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   return (
-    <BottomTab.Navigator
-      initialRouteName="Meditation"
-    >
+    <BottomTab.Navigator initialRouteName="Meditation">
       <BottomTab.Screen
         name="Meditation"
-        component={ MeditationScreenNavigator }
+        component={MeditationScreenNavigator}
         options={{
-          tabBarIcon: ({ color }) => (
-            <MeditationIcon color={ color } />
-          ),
+          tabBarIcon: ({color}) => <MeditationIcon color={color} />,
+          tabBarTestID: 'meditation',
         }}
       />
       <BottomTab.Screen
         name="Progress"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => (
-            <MeditationIcon color={ color } />
-          ),
+          tabBarIcon: ({color}) => <MeditationIcon color={color} />,
+          tabBarTestID: 'progress',
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => (
-            <MeditationIcon color={ color } />
-          ),
+          tabBarIcon: ({color}) => <MeditationIcon color={color} />,
+          tabBarTestID: 'settings',
         }}
       />
     </BottomTab.Navigator>
@@ -54,7 +49,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{ headerTitle: "First tab" }}
+        options={{headerTitle: 'First tab'}}
       />
     </TabOneStack.Navigator>
   );
@@ -68,8 +63,24 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+        options={{headerTitle: 'Tab Two Title'}}
       />
     </TabTwoStack.Navigator>
   );
 }
+
+const TabMeditationStack = createStackNavigator();
+
+export function MeditationScreenNavigator() {
+  return (
+    <TabMeditationStack.Navigator>
+      <TabMeditationStack.Screen
+        name="MeditationScreen"
+        component={MeditationScreen}
+        options={{
+          headerTitle: 'Meditation',
+        }}
+      />
+    </TabMeditationStack.Navigator>
+  );
+};
