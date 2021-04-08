@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "debug": "yarn react-devtools",
-    "e2e": "yarn detox test --configuration android"
+    "e2e:android": "yarn detox test --configuration android"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
