@@ -24,6 +24,7 @@ jobs:
     - run: brew tap wix/brew
     - run: brew install applesimutils
     - run: yarn install --frozen-lockfile
+    - run: cd ios && pod install && cd ..
     - run: yarn detox build --configuration ios.sim.release
     - run: yarn detox test  --configuration ios.sim.release --cleanup
 
