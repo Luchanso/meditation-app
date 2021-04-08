@@ -1,4 +1,4 @@
-name: Run e2e
+name: Run unit test's
 
 on:
   push:
@@ -7,7 +7,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  units:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.JS
+      uses: actions/setup-node@master
+    - run: yarn install --frozen-lockfile
+    - run: yarn jest --ci
+  e2e:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v2
@@ -16,8 +24,6 @@ jobs:
     - run: brew tap wix/brew
     - run: brew install applesimutils
     - run: yarn install --frozen-lockfile
-  test:
-    runs-on: macos-latest
-    steps:
     - run: yarn detox build --configuration ios
     - run: yarn detox test  --configuration ios --cleanup
+
