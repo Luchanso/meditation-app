@@ -21,8 +21,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Use Node.JS
       uses: actions/setup-node@master
-    - run: brew tap wix/brew
-    - run: brew install applesimutils
+      # TODO: uncomment when build is will be successful
+    # - run: brew tap wix/brew
+    # - run: brew install applesimutils
     - run: yarn install --frozen-lockfile
     - run: cd ios && pod install && cd ..
     - run: yarn detox build --configuration ios.sim.release

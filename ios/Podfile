@@ -12,7 +12,6 @@ target 'MeditationApp' do
     :hermes_enabled => false
   )
 
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
   target 'MeditationAppTests' do
     inherit! :complete
