@@ -49,16 +49,16 @@ jobs:
           ${{ runner.os }}-yarn-
     ### --- cache finish ---
       # TODO: uncomment when build is will be successful
-    # - run: brew tap wix/brew
-    # - run: brew install applesimutils
+    - run: brew tap wix/brew
+    - run: brew install applesimutils
     - run: yarn install --frozen-lockfile
     - run: pod install
       working-directory: ios
 
-    - run: xcodebuild clean archive -workspace meditationapp.xcworkspace -scheme MeditationApp -archivePath MeditationApp.xcarchive CODE_SIGNING_ALLOWED=NO | xcpretty
-      working-directory: ios
+    # - run: xcodebuild clean archive -workspace meditationapp.xcworkspace -scheme MeditationApp -archivePath MeditationApp.xcarchive CODE_SIGNING_ALLOWED=NO | xcpretty
+    #   working-directory: ios
 
-    # - run: yarn detox build --configuration ios.sim.release
-    # - run: yarn detox test  --configuration ios.sim.release --cleanup
+    - run: yarn detox build --configuration ios.sim.release
+    - run: yarn detox test  --configuration ios.sim.release --cleanup
 
 
