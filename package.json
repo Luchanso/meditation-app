@@ -12,7 +12,7 @@
     "e2e:android": "yarn detox test --configuration android"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/masked-view": "0.1.11",
     "@react-navigation/bottom-tabs": "5.11.9",
     "@react-navigation/native": "5.9.4",
     "@react-navigation/stack": "5.14.4",
